@@ -1,6 +1,6 @@
 # Courses Flowchart
 
-Use it live at: https://vnakayama.github.io/grade_eletronica/
+Use it live at: https://vnakayama.github.io/grade_controle/
 
 *Based on the Computer Engineering undergrad original flowchart: https://gremio-eci.github.io/grade/*
 
