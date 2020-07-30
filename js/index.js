@@ -5,7 +5,7 @@ var editLock = "false";				// (internal) Variable to hold if course selection is
 var colorId = 0;					// (internal) Represents the index of the color being used to toggle courses as completed, as taken from the window.colors list
 var creditsOrCode = "credits"		// (internal) Holds whether credits or code are being displayed for courses at a given time
 var pressAndHoldTime = 500;    		// Period of time for the program to consider a touch/click as a "click and hold"
-var courseId = 0; //ID of the choosen course
+var courseId = 2; //ID of the choosen course
 
 /* Initialization function: */
  $(document).ready(function(){
@@ -216,13 +216,16 @@ function setCreditsText(i, fade){
 	var text = "";
 	if (courses[courseId][i].credits == 1){
 		text = " crédito)";
-	} else if (courses[courseId][i].credits < 30){
-		text = " créditos)";
-	} else {
-		text = " horas)";
+    text = "(" + courses[courseId][i].credits + text;
+	} else if (courses[courseId][i].credits == 0){
+  		text = " horas)";
+      text = "(" + courses[courseId][i].workload + text;
+  } else {
+  		text = " créditos)";
+      text = "(" + courses[courseId][i].credits + text;
 	}
-	// Finishes formatting text:
-	text = "(" + courses[courseId][i].credits + text;
+	// // Finishes formatting text:
+	// text = "(" + courses[courseId][i].credits + text;
 
 	// Checks if fading has been set:
 	if ((fade == true) && (credits.html() !== text)){
